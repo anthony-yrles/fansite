@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   height: 100%;
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
@@ -54,8 +53,8 @@ nav {
   transition: 0.7s;
 }
 
-#hamburger:checked~#hamburger-logo,
-#hamburger:checked~nav {
+#hamburger:checked ~ #hamburger-logo,
+#hamburger:checked ~ nav {
   transform: translate(0px);
 }
 
@@ -201,38 +200,85 @@ body .bcg-image .cartes {
   color: white;
 }
 
-body .bcg-image .cartes h1 {
+body .bcg-image main .petit-ecran h1 {
   font-size: 40px;
   padding: 25px;
 }
 
-body .bcg-image .cartes h2 {
+body .bcg-image main .petit-ecran h2 {
   font-size: 25px;
   padding: 25px;
 }
 
-body .bcg-image .cartes img {
+body .bcg-image main .petit-ecran img {
   width: 60%;
   margin: auto;
 }
 
-body .bcg-image .cartes video {
+body .bcg-image main .petit-ecran video {
   margin: auto;
   width: 80%;
 }
 
-body .bcg-image .cartes p {
+body .bcg-image main .petit-ecran p {
   font-size: 15px;
   padding: 25px;
 }
 
-@media screen and (min-width: 620px) and (max-width: 1200px) {
-  body .bcg-image .cartes {
+@media screen and (min-width: 620px) {
+  body .bcg-image header .burger-menu {
+    width: 100%;
+    position: relative;
+  }
+
+  #hamburger-logo {
     display: none;
   }
 
-  body .bcg-image .grand-ecran {
-    margin-top: 3%;
+  body .bcg-image header .burger-menu nav {
+    background: none;
+    width: 100%;
+    transform: translateX(0);
+    display: flex;
+    justify-content: space-around;
+  }
+
+  body .bcg-image header .burger-menu nav a {
+    color: red;
+    font-size: 35px;
+  }
+  body .bcg-image main .petit-ecran {
+    display: none;
+  }
+
+  body .bcg-image main .grand-ecran {
+    display: block;
+    margin: 3%;
+  }
+  body .bcg-image main .grand-ecran .grand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 2%;
+  }
+
+  body .bcg-image main .grand-ecran .grand .grand-ecrit {
+    padding: 0% 2%;
+  }
+
+  body .bcg-image main .grand-ecran .grand .grand-ecrit p {
+    font-size: 16px;
+  }
+
+  body .bcg-image main .grand-ecran .grand video {
+    width: 30%;
+    max-width: 40%;
+  }
+
+  body .bcg-image main .grand-ecran .triangle {
+    cursor: pointer;
+    margin: -20%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -240,18 +286,7 @@ body .bcg-image .cartes p {
       "bottom1 up1 bottom2"
       "empty1 bottom3 empty2";
   }
-
-  /* body .bcg-image .grand-ecran .bottom1 {
-    grid-area: bottom1;
-    width: 0;
-    height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-top: 300px solid black;
-    transform: translateX(150px);
-  } */
-
-  body .bcg-image .grand-ecran .bottom1 {
+  body .bcg-image main .grand-ecran .triangle .bottom1 {
     grid-area: bottom1;
     width: 100%;
     height: 100%;
@@ -261,13 +296,13 @@ body .bcg-image .cartes p {
     transform: translateX(50%);
   }
 
-  body .bcg-image .grand-ecran .bottom1 img {
+  body .bcg-image main .grand-ecran .triangle .bottom1 img {
     width: 100%;
     height: 100%;
     transform: translateY(40%);
   }
-  
-  body .bcg-image .grand-ecran .up1 {
+
+  body .bcg-image main .grand-ecran .up1 {
     grid-area: up1;
     width: 100%;
     height: 100%;
@@ -275,13 +310,13 @@ body .bcg-image .cartes p {
     justify-self: flex-end;
     align-self: flex-end;
   }
-  body .bcg-image .grand-ecran .up1 img {
+  body .bcg-image main .grand-ecran .up1 img {
     width: 100%;
     height: 100%;
     transform: translateY(50%);
   }
-  
-  body .bcg-image .grand-ecran .bottom2 {
+
+  body .bcg-image main .grand-ecran .triangle .bottom2 {
     grid-area: bottom2;
     width: 100%;
     height: 100%;
@@ -292,17 +327,17 @@ body .bcg-image .cartes p {
     transform: translateX(-50%);
   }
 
-  body .bcg-image .grand-ecran .bottom2 img {
+  body .bcg-image main .grand-ecran .triangle .bottom2 img {
     width: 100%;
     height: 100%;
     transform: translateY(50%);
   }
-  
-  body .bcg-image .grand-ecran .empty1 {
+
+  body .bcg-image main .grand-ecran .triangle .empty1 {
     grid-area: empty1;
   }
-  
-  body .bcg-image .grand-ecran .bottom3 img {
+
+  body .bcg-image main .grand-ecran .triangle .bottom3 img {
     grid-area: bottom3;
     width: 100%;
     height: 100%;
@@ -311,12 +346,108 @@ body .bcg-image .cartes p {
     overflow: hidden;
   }
 
-  body .bcg-image .grand-ecran .bottom3 img {
+  body .bcg-image main .grand-ecran .triangle .bottom3 img {
     width: 100%;
     height: 100%;
   }
-  
-  body .bcg-image .grand-ecran .empty2 {
+
+  body .bcg-image main .grand-ecran .triangle .empty2 {
     grid-area: empty2;
   }
+
+  body .bcg-image main .grand-ecran .triangle:hover {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  }
+
+  body .bcg-image main .grand-ecran .full-triangle {
+    margin: auto;
+    margin-bottom: -50%;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: hidden;
+    clip-path: polygon(50% 0%, 0% 40%, 0% 85%, 50% 100%, 100% 85%, 100% 40%);
+    transform: translateY(-100%);
+  }
+
+  body .bcg-image main .grand-ecran .full-triangle img {
+    width: 100%;
+    height: 100%;
+  }
+  body .bcg-image main .grand-ecran .triangle:hover ~ .full-triangle {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 0.3s ease-in-out;
+  }
+}
+
+/* Mise en page CSS pour yugi.html. */
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+body .yugi {
+  width: 80%;
+  clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
+}
+
+body .yugi img {
+  width: 100%;
+  height: 100%;
+}
+
+body .pegasus {
+  width: 80%;
+  clip-path: polygon(
+    50% 0%,
+    69% 25%,
+    98% 35%,
+    81% 64%,
+    83% 100%,
+    50% 84%,
+    15% 100%,
+    20% 61%,
+    2% 35%,
+    29% 25%
+  );
+}
+
+body .pegasus img {
+  width: 100%;
+  height: 100%;
+}
+body .dartz {
+  width: 80%;
+  clip-path: polygon(
+    50% 0%,
+    89% 8%,
+    100% 33%,
+    100% 70%,
+    89% 94%,
+    50% 100%,
+    33% 77%,
+    0 87%,
+    0 17%,
+    29% 23%
+  );
+}
+body .dartz img {
+  width: 100%;
+  height: 100%;
+}
+
+body .noah {
+  width: 80%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+body .noah img {
+  width: 100%;
+  height: 100%;
 }
