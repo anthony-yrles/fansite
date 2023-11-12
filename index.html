@@ -19,9 +19,9 @@
                 <input type="checkbox" id="hamburger">
                 <label id="hamburger-logo" for="hamburger">☰</label>
                 <nav>
-                    <a href="">Index</a>
+                    <a href="index.html">Index</a>
                     <a href="cartes.html">Cartes</a>
-                    <a href="ennemi.html">Antagonistes</a>
+                    <a href="ennemi.html">Ennemi</a>
                     <!-- <a href=""></a> -->
                 </nav>
             </section>
@@ -31,9 +31,30 @@
             <p>(海馬 瀬人)</p>
         </main>
         <footer>
-            <a href="https://kaiba-corp.forumactif.fr/">Sites amis</a>
-            <a href="https://twitter.com/official_kaiba?lang=fr">Twitter</a>
-            <a href="contact.html">Contact</a>
+            <h4>Liens utiles et contacts</h4>
+            <section>
+                <a href="https://kaiba-corp.forumactif.fr/">Sites amis</a>
+                <a href="https://twitter.com/official_kaiba?lang=fr">Twitter</a>
+            </section>
+            <section class="contact">
+                <form action="mailto:votre@email.com" method="post" enctype="text/plain">
+                    <section class="contact-nom">
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="prenom">Prenom :</label>
+                        <input type="text" id="prenom" name="prenom" required>
+
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+                    </section>
+                    <section>
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <input type="submit" value="Envoyer">
+                    </section>
+                </form>
+            </section>
         </footer>
     </section>
 </body>
